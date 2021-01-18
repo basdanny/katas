@@ -68,10 +68,10 @@ namespace Interview
                     secondsmall2 = new Tuple<int, int>(i, arr2[i]);
             }
 
-            Console.WriteLine($"Smallest key:{smallest1.Item1} value: {smallest1.Item2}");
-            Console.WriteLine($"Second small key:{secondsmall1.Item1} value: {secondsmall1.Item2}");
-            Console.WriteLine($"Smallest key:{smallest2.Item1} value: {smallest2.Item2}");
-            Console.WriteLine($"Second small key:{secondsmall2.Item1} value: {secondsmall2.Item2}");
+            Console.WriteLine($"Smallest index:{smallest1.Item1} value: {smallest1.Item2}");
+            Console.WriteLine($"Second small index:{secondsmall1.Item1} value: {secondsmall1.Item2}");
+            Console.WriteLine($"Smallest index:{smallest2.Item1} value: {smallest2.Item2}");
+            Console.WriteLine($"Second small index:{secondsmall2.Item1} value: {secondsmall2.Item2}");
 
             if (smallest1.Item1 != smallest2.Item1)
                 return (smallest1.Item2 + smallest2.Item2);

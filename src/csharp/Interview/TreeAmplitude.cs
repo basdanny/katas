@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 namespace Interview
 {
     /*
-     *  Find amplitude of a tree - Find the highest path  distance (highest value in path - lowest value in path). 
-     *  in o(n).
+     *  Find amplitude of a tree - Find the highest path distance (highest value in path minus lowest value in path). 
+     *  in O(n).
      */
     public class TreeAmplitude<T>
     {

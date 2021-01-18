@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,9 +46,13 @@
   <ItemGroup>
     <Compile Include="AlmostSortedArray.cs" />
     <Compile Include="ArraysMin.cs" />
-    <Compile Include="CommonAncestor.cs" />
+    <Compile Include="BinarySearch.cs" />
+    <Compile Include="BubbleSort.cs" />
+    <Compile Include="SearchBytesInFile.cs" />
+    <Compile Include="TreeNode.cs" />
     <Compile Include="Fibonacci.cs" />
     <Compile Include="FizzBuzz.cs" />
+    <Compile Include="MatrixLargestSquare.cs" />
     <Compile Include="MatrixPath.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

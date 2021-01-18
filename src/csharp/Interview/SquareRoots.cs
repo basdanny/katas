@@ -11,7 +11,7 @@ namespace Interview
         /// <summary>
         /// get sum of all square roots of digits of a number
         /// </summary>        
-        public static int SquareDigits(int n)
+        public static int GetDigitsSquareRoots(int n)
         {
             if (n / 10 == 0)
                 return n*n;            
@@ -19,7 +19,7 @@ namespace Interview
             int lastdigit = n % 10;
             int lastdigitSquare = lastdigit * lastdigit;
             int multiplier = (lastdigitSquare > 9) ? 100 : 10;
-            return lastdigitSquare + (SquareDigits(n / 10) * multiplier);
+            return lastdigitSquare + (GetDigitsSquareRoots(n / 10) * multiplier);
         }
     
 

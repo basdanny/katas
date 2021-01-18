@@ -8,20 +8,20 @@ namespace Interview
 {
  
  /*
-     Two dimensional board (matrix) consisting of 0 and 1
+    Two dimensional board (matrix) consisting of 0 and 1
     need to find path between origin and destination when you can go only on '1'
  */
 
     public class MatrixPath
     {
-        public static string GetPath(int[,] matrix, int row, int col, Tuple<int, int> dest, Dictionary<string, string> dicUsed = null, string path = "")
+        public static string GetPath(int[,] matrix, int row, int col, Tuple<int, int> dest, HashSet<string> setUsed = null, string path = "")
         {
-            if (dicUsed == null)
-                dicUsed = new Dictionary<string, string>();
+            if (setUsed == null)
+                setUsed = new HashSet<string>();
 
             if (row < 0 || row > matrix.GetLength(0) - 1 || col < 0 || col > matrix.GetLength(1) - 1 //out of bounds of array
                 || matrix[row, col] == 0 //cant walk on 0
-                || dicUsed.ContainsKey(row + "," + col)) //already walked here
+                || setUsed.Contains(row + "," + col)) //already walked here
                 return null;
 
             PrintMatrix(matrix, row, col); //for visualization only
@@ -29,16 +29,16 @@ namespace Interview
             if (row == dest.Item1 && col == dest.Item2)
                 return path;
 
-            dicUsed.Add(row + "," + col, ""); //add current step
+            setUsed.Add(row + "," + col); //add current step
 
 
-            string route = GetPath(matrix, row, col - 1, dest, dicUsed, path + " Left ");
+            string route = GetPath(matrix, row, col - 1, dest, setUsed, path + " Left ");
             if (!string.IsNullOrEmpty(route)) return route;
-            route = GetPath(matrix, row - 1, col, dest, dicUsed, path + " Up ");
+            route = GetPath(matrix, row - 1, col, dest, setUsed, path + " Up ");
             if (!string.IsNullOrEmpty(route)) return route;
-            route = GetPath(matrix, row, col + 1, dest, dicUsed, path + " Right ");
+            route = GetPath(matrix, row, col + 1, dest, setUsed, path + " Right ");
             if (!string.IsNullOrEmpty(route)) return route;
-            route = GetPath(matrix, row + 1, col, dest, dicUsed, path + " Down ");
+            route = GetPath(matrix, row + 1, col, dest, setUsed, path + " Down ");
             if (!string.IsNullOrEmpty(route)) return route;
 
             return string.Empty;

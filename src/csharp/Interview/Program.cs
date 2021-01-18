@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,36 +14,51 @@ namespace Interview
     {
         static void Main(string[] args)
         {
-            #region MatrixPath
-            /*
-            int[,] matrix = MatrixPath.InitMatrix();
-            MatrixPath.PrintMatrix(matrix, 3, 0);            
-            Console.WriteLine("\n"+ MatrixPath.GetPath(matrix, 3, 0, Tuple.Create(0, 1)));
-            */
+
+            #region BubbleSort
+            //int[] arr = new int[] { 8, 3, 2, 6, 1 };
+            //BubbleSort.Sort(arr);
+            //Console.WriteLine(string.Join(",", arr));
             #endregion
 
+
+
+            #region SearchBytesInFile
+            //SearchBytesInFile.Test();
+            #endregion
+
+
+            #region BinarySearch            
+            //BinarySearch.Test(BinarySearch.Chop);
+            //BinarySearch.Test(BinarySearch.cho);
+            //BinarySearch.Test(BinarySearch.ChopRecursive);
+            #endregion
+
+
+            #region MatrixPath            
+            /*int[,] matrix = MatrixPath.InitMatrix();
+            Console.WriteLine("input: ");
+            MatrixPath.PrintMatrix(matrix, 3, 0);
+            Console.WriteLine("path: ");
+            Console.WriteLine(MatrixPath.GetPath(matrix, 3, 0, Tuple.Create(0, 1)));*/
+            #endregion
 
 
             #region CommonAncestor + TreeAmplitude
-            /*
-            Node<int> root = new Node<int>("A", 1);
-            root.left = new Node<int>("B", 2);
-            root.right = new Node<int>("C", 5);
-            root.right.left = new Node<int>("D", 4);
-            root.right.right = new Node<int>("E", 3);
-            root.right.left.left = new Node<int>("F", 1);
-            root.right.left.right = new Node<int>("G", 2);
+            //Node<int> root = new Node<int>("A", 1);
+            //root.left = new Node<int>("B", 20);
+            //root.right = new Node<int>("C", 100);
+            //root.right.left = new Node<int>("D", 40);
+            //root.right.right = new Node<int>("E", 30);
+            //root.right.left.left = new Node<int>("F", 10);
+            //root.right.left.right = new Node<int>("G", 20);
 
-            Node<int>.PrintLevelByLevel(root); //or Node<string>.PrintRecursive(root);
-            Console.WriteLine("Common ancestor is: " +
-                Node<int>.LeastCommonAncestor(root, root.right.left.left, root.right.right).name);
+            //Node<int>.PrintLevelByLevel(root); //or Node<string>.PrintRecursive(root);
+            //Console.WriteLine("Common ancestor is: " + Node<int>.LeastCommonAncestor(root, root.right.left.left, root.right.right).name);
 
-
-            Console.WriteLine(" TreeAmplitude: " +
-                TreeAmplitude<int>.GetTreeAmplitude(root)
-                );
-            */
+            //Console.WriteLine(" TreeAmplitude: " + TreeAmplitude<int>.GetTreeAmplitude(root));
             #endregion
+
 
             #region AlmostSortedArray
             /*
@@ -52,42 +69,59 @@ namespace Interview
             */
             #endregion
 
-            #region AlmostSortedArray
-            /*
-            FizzBuzz.FizzBuzzPrint(30);
-            */
+
+            #region FizzBuzz
+            //FizzBuzz.FizzBuzzPrint(30);
             #endregion
 
-            #region AlmostSortedArray
-            /*
-            Fibonacci.PrintFibonacciIterative(26);
-            Console.WriteLine("---------------------------------------------------");
-            Console.WriteLine(Fibonacci.FibonacciElementRecursive(26));
-            */
+
+            #region Fibonacci            
+            /* Stopwatch sw = new Stopwatch();
+             sw.Start();
+             BigInteger result = Fibonacci.FibonacciElementRecursive(36);
+             sw.Stop();
+             Console.WriteLine("Fibonacci Element Recursive:\t" + result + "\t Elapsed time in milli: " + sw.ElapsedMilliseconds);
+
+             sw.Restart();
+             result = Fibonacci.FibonacciElementRecursive(36, null);
+             sw.Stop();
+             Console.WriteLine("Recursive + Memoization:\t" + result + "\t Elapsed time in milli: " + sw.ElapsedMilliseconds);
+
+             sw.Restart();
+             result = Fibonacci.FibonacciElementIterative(36);
+             sw.Stop();
+             Console.WriteLine("Fibonacci Element Iterative:\t" + result + "\t Elapsed time in milli: " + sw.ElapsedMilliseconds);*/
             #endregion
 
-            #region AlmostSortedArray
-            /*
-            int[] arr1 = { 3, 1, 4, 2 }; 
-            int[] arr2 = { 6, 1, 2, 9 };
 
-            Console.WriteLine("----------------------------\n" +
-                ArraysMin.MinSumOfTwoArrays(arr1, arr2));
+            #region ArraysMin            
+            /* int[] arr1 = { 3, 1, 4, 2 }; 
+             int[] arr2 = { 6, 1, 2, 9 };
 
-            
-            int[] arr11 = { 3, 9, 10, 4, 7 };
-            int[] arr22 = { 6, 3, 2, 10 };
-            Console.WriteLine("Minimal shared element value: " + ArraysMin.GetMinimalValueOfSharedElement(arr11, arr22));            
-            */
+             Console.WriteLine("----------------------------\n" +
+                 ArraysMin.MinSumOfTwoArrays(arr1, arr2));
+
+
+             int[] arr11 = { 3, 9, 10, 4, 7 };
+             int[] arr22 = { 6, 3, 2, 10 };
+             Console.WriteLine("Minimal shared element value: " + ArraysMin.GetMinimalValueOfSharedElement(arr11, arr22));*/
             #endregion
 
 
             #region SquareRoots
-            //Console.WriteLine(SquareRoots.SquareDigits(9119));
+            //Console.WriteLine("9119 digits square roots are: " + SquareRoots.GetDigitsSquareRoots(9119));
             #endregion
 
-            Console.WriteLine("\n");
-            Console.ReadKey();            
+            #region MatrixLargestSquare
+            /*MatrixLargestSquare m = new MatrixLargestSquare();
+
+            Console.WriteLine("largest square of 1's is: "+m.GetLargestSquare());
+            Console.WriteLine("largest square recursive of 1's is: " + m.GetLargestSquareRecursive());*/
+            #endregion
+
+
+            Console.WriteLine("Done");
+            Console.ReadKey();
         }
 
 

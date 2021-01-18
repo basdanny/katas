@@ -45,28 +45,27 @@ namespace Interview
         }
 
         /// <summary>
-        /// non recursive print - level by level
+        /// non recursive print - level by level (BFS)
         /// </summary>
         public static void PrintLevelByLevel(Node<T> root)
         {
             Queue<Node<T>> nodes = new Queue<Node<T>>();
             nodes.Enqueue(root);
-
             while (nodes.Count > 0)
             {
                 Node<T> currentNode = nodes.Dequeue();
-                Console.Write(currentNode.name + "\t");
+                Console.Write($"{currentNode.name}  ");
                 if (currentNode.left != null)
                     nodes.Enqueue(currentNode.left);
                 if (currentNode.right != null)
-                    nodes.Enqueue(currentNode.right);                
+                    nodes.Enqueue(currentNode.right);
             }
 
             Console.WriteLine();
         }
 
         /// <summary>
-        /// preorder recursive print
+        /// (DFS) preorder recursive print
         /// </summary>        
         public static void PrintRecursive(Node<T> node)
         {

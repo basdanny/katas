@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -8,7 +9,7 @@ namespace Interview
 {
     class Fibonacci
     {
-        public static int FibonacciElementRecursive(int n)
+        public static BigInteger FibonacciElementRecursive(int n)
         {
             if (n <= 1)
                 return n;
@@ -16,23 +17,34 @@ namespace Interview
             return FibonacciElementRecursive(n - 1) + FibonacciElementRecursive(n - 2);
         }
 
+        public static BigInteger FibonacciElementRecursive(int n, BigInteger[] memo=null)
+        {
+            if (memo == null)
+                memo = new BigInteger[n + 1];
 
-        public static void PrintFibonacciIterative(int n)
-        {            
-            int prev = 1;            
-            int curr = 1;
+            if (n <= 1)
+                return n;
 
-            Console.Write(prev + " ");
-            Console.Write(curr + " ");
+            if (memo[n] <= 0)
+                memo[n] = FibonacciElementRecursive(n - 1, memo) + FibonacciElementRecursive(n - 2, memo);
 
-            for (int i = 3; i <= n; i++)
+            return memo[n];
+        }
+
+
+        public static BigInteger FibonacciElementIterative(int n)
+        {
+            BigInteger prev = 0;
+            BigInteger curr = 1;
+
+            for (int i = 2; i <= n; i++)
             {
-                int temp = curr;
+                BigInteger temp = curr;
                 curr = prev + curr;
                 prev = temp;
-
-                Console.Write(curr + " ");
             }
+
+            return curr;
         }
     }
 }

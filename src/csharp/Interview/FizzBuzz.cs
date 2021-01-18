@@ -10,7 +10,7 @@ namespace Interview
     {
         public static void FizzBuzzPrint(int n)
         {
-            for (int i = 0; i < n; i++)
+            for (int i = 1; i <= n; i++)
             {
                 bool fizzbuzz = false;
                 if (i % 3 == 0)
