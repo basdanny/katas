@@ -9,7 +9,7 @@ O(n) solution
 let matrix = [
     [1, 1, 1, 1],
     [1, 1, 0, 0],
-    [1, 1, 0, 0],
+    [1, 1, 1, 0],
     [0, 0, 0, 0],
 ];
 
@@ -31,5 +31,3 @@ while (i < rowsLength && j >= 0) {
 }
 
 console.log(resultRowIndex);
-
-

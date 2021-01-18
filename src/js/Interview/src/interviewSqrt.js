@@ -10,20 +10,21 @@ function Sqrt(num) {
 
     //reduce range of search
     while (true) {
-        let newEndIndex = startIndex + Math.round((endIndex - startIndex) / 2);
-        if ((newEndIndex * newEndIndex) < num) {
-            startIndex = newEndIndex;
+        let newIndex = startIndex + Math.round((endIndex - startIndex) / 2);
+        if ((newIndex * newIndex) < num) {
+            startIndex = newIndex;
         } else {
-            endIndex = newEndIndex;
+            endIndex = newIndex;
         }
 
         if (endIndex - startIndex < 10)
             break;
     }
 
+
     let result = startIndex * startIndex;
     let nextResult;
-    for (let i = startIndex + 1; i < endIndex; i++) {
+    for (let i = startIndex; i <= endIndex; i++) {
         nextResult = (i + 1) * (i + 1);
         if (result === num || (result < num && nextResult > num))
             return i;
@@ -36,8 +37,6 @@ function Sqrt(num) {
 
 
 
-
-
 var start = new Date().getTime();
 
 console.log(Sqrt(4225000000));
@@ -45,10 +44,10 @@ console.log(Sqrt(4225000001));
 console.log(Sqrt(4225000002));
 console.log(Sqrt(4225000003));
 console.log(Sqrt(4225000004));
+console.log(Sqrt(80));
+console.log(Sqrt(81));
+console.log(Sqrt(82));
 console.log(Sqrt(90));
 
 var elapsed = new Date().getTime() - start;
 console.log('Execution time: ' + elapsed);
-
-
-

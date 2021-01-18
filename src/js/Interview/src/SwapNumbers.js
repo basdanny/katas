@@ -12,7 +12,7 @@ function swapNumbers(x, y) {
 }
 
 let x = 10
-let y = 30;
+let y = -30;
 console.log(`x: ${x} y: ${y}`);
 [x, y] = swapNumbers(x, y);
 console.log(`x: ${x} y: ${y}`);
