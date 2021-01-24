@@ -44,10 +44,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdjacencyMatrix.cs" />
     <Compile Include="AlmostSortedArray.cs" />
     <Compile Include="ArraysMin.cs" />
     <Compile Include="BinarySearch.cs" />
     <Compile Include="BubbleSort.cs" />
+    <Compile Include="CommonDivisor.cs" />
+    <Compile Include="DataStructures.cs" />
+    <Compile Include="Intersections.cs" />
     <Compile Include="SearchBytesInFile.cs" />
     <Compile Include="TreeNode.cs" />
     <Compile Include="Fibonacci.cs" />

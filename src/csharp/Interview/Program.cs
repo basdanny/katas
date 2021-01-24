@@ -119,6 +119,30 @@ namespace Interview
             Console.WriteLine("largest square recursive of 1's is: " + m.GetLargestSquareRecursive());*/
             #endregion
 
+            #region CommonDivisor
+            //Console.WriteLine("GCD " + CommonDivisor.GetGreatestCommonDivisor(4, 8));
+            //Console.WriteLine("GCD " + CommonDivisor.GetGreatesCommonDivisorEuclidean(4, 8));
+
+            //Console.WriteLine("LCM " + CommonDivisor.GetLeastCommonMultiple(10, 135));
+            //Console.WriteLine("LCM " + CommonDivisor.GetLeastCommonMultiple2(10, 135));
+            #endregion
+
+            #region Sets
+            //Intersections.Do();
+            #endregion
+
+            #region AdjacencyMatrix                        
+            //AdjacencyMatrix.Graph g = new AdjacencyMatrix.Graph(5, 4);
+            //g.AddEdge(0, 1);
+            //g.AddEdge(0, 2);
+            //g.AddEdge(1, 3);
+
+            //g.BFS(0);
+            #endregion
+
+            #region DataStructures
+            //DataStructures.Play();
+            #endregion
 
             Console.WriteLine("Done");
             Console.ReadKey();
