@@ -8,19 +8,19 @@
 function largestPalindromeProduct(n) {
     var maxPalindrome = -1;
     var maxNumber = Math.pow(10, n) - 1;
-    var smallNumber = Math.pow(10, n-1);
-    
+    var smallNumber = Math.pow(10, n - 1);
+
     //console.log('max number: ' + maxNumber + ' smallNumber: '+smallNumber);
 
     for (var num = maxNumber; num >= smallNumber; num--) {
         for (var secNum = maxNumber; secNum >= smallNumber; secNum--) {
             //console.log('num: '+num+' secNum: '+secNum);      
-            var palindrome = num * secNum;            
+            var palindrome = num * secNum;
             if (palindrome > maxPalindrome && isPalindrome(palindrome)) {
                 maxPalindrome = palindrome;
                 break;
             }
-            else if (palindrome < maxPalindrome) 
+            else if (palindrome < maxPalindrome)
                 break;
         }
     }
@@ -59,11 +59,3 @@ console.log(largestPalindromeProduct(3));
 var end = new Date().getTime();
 var time = end - start;
 console.log('Execution time: ' + time);
-
-
-
-
-
-
-
-
