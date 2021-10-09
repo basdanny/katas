@@ -144,6 +144,14 @@ namespace Interview
             //DataStructures.Play();
             #endregion
 
+            #region DataStructures
+            new Any().RunTests();
+            #endregion
+
+            #region DataStructures
+            new Anagram().RunTests();
+            #endregion
+
             Console.WriteLine("Done");
             Console.ReadKey();
         }

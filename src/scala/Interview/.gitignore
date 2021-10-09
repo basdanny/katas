@@ -1,0 +1,10 @@
+/shelf/
+/workspace.xml
+out/
+.idea/
+
+*.log
+*.iml
+*.ipr
+*.iws
+.idea
