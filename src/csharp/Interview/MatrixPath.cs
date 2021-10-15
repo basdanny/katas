@@ -1,16 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Interview
 {
- 
- /*
-    Two dimensional board (matrix) consisting of 0 and 1
-    need to find path between origin and destination when you can go only on '1'
- */
+
+    /*
+       Two dimensional board (matrix) consisting of 0 and 1
+       need to find path between origin and destination when you can go only on '1'
+    */
 
     public class MatrixPath
     {

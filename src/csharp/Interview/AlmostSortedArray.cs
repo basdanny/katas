@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Interview
+﻿namespace Interview
 {
     /*
      *  Sort an almost sorted array where only two elements are swapped 
