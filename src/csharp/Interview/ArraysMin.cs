@@ -11,11 +11,12 @@ namespace Interview
      */
     class ArraysMin
     {
-        public static int GetMinimalValueOfSharedElement(int[] arr1, int[] arr2)
+        public static int GetIndexOfMinimalValueOfSharedElement(int[] arr1, int[] arr2)
         {
             int n = arr1.Length;
             int m = arr2.Length;
 
+            var origArr1 = (int[])arr1.Clone();
             Array.Sort(arr1);
             Array.Sort(arr2);
 
@@ -24,7 +25,7 @@ namespace Interview
             while (i<n && k<m)
             {
                 if (arr1[i] == arr1[k])
-                    return arr1[i];
+                    return Array.IndexOf(origArr1, arr1[i]); //return arr1[i];
                 else if (arr1[i] < arr2[k])
                     i++;
                 else

@@ -17,15 +17,15 @@ namespace Interview
             return FibonacciElementRecursive(n - 1) + FibonacciElementRecursive(n - 2);
         }
 
-        public static BigInteger FibonacciElementRecursive(int n, BigInteger[] memo=null)
+        public static BigInteger FibonacciElementRecursive(int n, Dictionary<int, BigInteger> memo=null)
         {
             if (memo == null)
-                memo = new BigInteger[n + 1];
+                memo = new Dictionary<int, BigInteger>();
 
             if (n <= 1)
                 return n;
 
-            if (memo[n] <= 0)
+            if (!memo.ContainsKey(n))
                 memo[n] = FibonacciElementRecursive(n - 1, memo) + FibonacciElementRecursive(n - 2, memo);
 
             return memo[n];

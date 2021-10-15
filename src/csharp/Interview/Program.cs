@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
 using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
-
-
 
 namespace Interview
 {
@@ -45,18 +39,18 @@ namespace Interview
 
 
             #region CommonAncestor + TreeAmplitude
-            //Node<int> root = new Node<int>("A", 1);
-            //root.left = new Node<int>("B", 20);
-            //root.right = new Node<int>("C", 100);
-            //root.right.left = new Node<int>("D", 40);
-            //root.right.right = new Node<int>("E", 30);
-            //root.right.left.left = new Node<int>("F", 10);
-            //root.right.left.right = new Node<int>("G", 20);
+            // Node<int> root = new Node<int>("A", 1);
+            // root.left = new Node<int>("B", 20);
+            // root.right = new Node<int>("C", 100);
+            // root.right.left = new Node<int>("D", 40);
+            // root.right.right = new Node<int>("E", 30);
+            // root.right.left.left = new Node<int>("F", 10);
+            // root.right.left.right = new Node<int>("G", 20);
 
-            //Node<int>.PrintLevelByLevel(root); //or Node<string>.PrintRecursive(root);
-            //Console.WriteLine("Common ancestor is: " + Node<int>.LeastCommonAncestor(root, root.right.left.left, root.right.right).name);
+            // Node<int>.PrintLevelByLevel(root); //or Node<string>.PrintRecursive(root);
+            // Console.WriteLine("Common ancestor is: " + Node<int>.LeastCommonAncestor(root, root.right.left.left, root.right.right).name);
 
-            //Console.WriteLine(" TreeAmplitude: " + TreeAmplitude<int>.GetTreeAmplitude(root));
+            // Console.WriteLine(" TreeAmplitude: " + TreeAmplitude<int>.GetTreeAmplitude(root));
             #endregion
 
 
@@ -76,40 +70,41 @@ namespace Interview
 
 
             #region Fibonacci            
-            /* Stopwatch sw = new Stopwatch();
-             sw.Start();
-             BigInteger result = Fibonacci.FibonacciElementRecursive(36);
-             sw.Stop();
-             Console.WriteLine("Fibonacci Element Recursive:\t" + result + "\t Elapsed time in milli: " + sw.ElapsedMilliseconds);
+            // Stopwatch sw = new Stopwatch();
+            // sw.Start();
+            // BigInteger result = Fibonacci.FibonacciElementRecursive(36);
+            // sw.Stop();
+            // Console.WriteLine("Fibonacci Element Recursive:\t" + result + "\t Elapsed time in milli: " + sw.ElapsedMilliseconds);
 
-             sw.Restart();
-             result = Fibonacci.FibonacciElementRecursive(36, null);
-             sw.Stop();
-             Console.WriteLine("Recursive + Memoization:\t" + result + "\t Elapsed time in milli: " + sw.ElapsedMilliseconds);
+            // sw.Restart();
+            // result = Fibonacci.FibonacciElementRecursive(36, null);
+            // sw.Stop();
+            // Console.WriteLine("Recursive + Memoization:\t" + result + "\t Elapsed time in milli: " + sw.ElapsedMilliseconds);
 
-             sw.Restart();
-             result = Fibonacci.FibonacciElementIterative(36);
-             sw.Stop();
-             Console.WriteLine("Fibonacci Element Iterative:\t" + result + "\t Elapsed time in milli: " + sw.ElapsedMilliseconds);*/
+            // sw.Restart();
+            // result = Fibonacci.FibonacciElementIterative(36);
+            // sw.Stop();
+            // Console.WriteLine("Fibonacci Element Iterative:\t" + result + "\t Elapsed time in milli: " + sw.ElapsedMilliseconds);
             #endregion
 
 
             #region ArraysMin            
-            /* int[] arr1 = { 3, 1, 4, 2 }; 
-             int[] arr2 = { 6, 1, 2, 9 };
+            // int[] arr1 = { 3, 1, 4, 2 };
+            // int[] arr2 = { 6, 1, 2, 9 };
 
-             Console.WriteLine("----------------------------\n" +
-                 ArraysMin.MinSumOfTwoArrays(arr1, arr2));
+            // Console.WriteLine("----------------------------\n" +
+            //     ArraysMin.MinSumOfTwoArrays(arr1, arr2));
 
 
-             int[] arr11 = { 3, 9, 10, 4, 7 };
-             int[] arr22 = { 6, 3, 2, 10 };
-             Console.WriteLine("Minimal shared element value: " + ArraysMin.GetMinimalValueOfSharedElement(arr11, arr22));*/
+            // int[] arr11 = { 3, 9, 10, 4, 7 };
+            // int[] arr22 = { 6, 3, 2, 10 };
+            // Console.WriteLine("Minimal shared element index: " + ArraysMin.GetIndexOfMinimalValueOfSharedElement(arr11, arr22));
             #endregion
 
 
             #region SquareRoots
-            //Console.WriteLine("9119 digits square roots are: " + SquareRoots.GetDigitsSquareRoots(9119));
+            // Console.WriteLine("9119 digits square roots are: " + SquareRoots.GetDigitsSquareRoots(9119));
+            // Console.WriteLine("9119 digits square roots are: " + SquareRoots.GetDigitsSquareRoots2(9119));
             #endregion
 
             #region MatrixLargestSquare
@@ -120,11 +115,14 @@ namespace Interview
             #endregion
 
             #region CommonDivisor
-            //Console.WriteLine("GCD " + CommonDivisor.GetGreatestCommonDivisor(4, 8));
-            //Console.WriteLine("GCD " + CommonDivisor.GetGreatesCommonDivisorEuclidean(4, 8));
+            // Console.WriteLine("GCD " + CommonDivisor.GetGreatestCommonDivisor(4, 8));
+            // Console.WriteLine("GCD " + CommonDivisor.GetGreatesCommonDivisorEuclidean(4, 8));
 
-            //Console.WriteLine("LCM " + CommonDivisor.GetLeastCommonMultiple(10, 135));
-            //Console.WriteLine("LCM " + CommonDivisor.GetLeastCommonMultiple2(10, 135));
+            // Console.WriteLine("LCM " + CommonDivisor.GetLeastCommonMultiple(10, 135));
+            // Console.WriteLine("LCM " + CommonDivisor.GetLeastCommonMultiple2(10, 135));
+
+            // Console.WriteLine("LCM " + CommonDivisor.GetLeastCommonMultiple(3, 4));
+            // Console.WriteLine("LCM " + CommonDivisor.GetLeastCommonMultiple2(3, 4));
             #endregion
 
             #region Sets
@@ -132,19 +130,19 @@ namespace Interview
             #endregion
 
             #region AdjacencyMatrix                        
-            //AdjacencyMatrix.Graph g = new AdjacencyMatrix.Graph(5, 4);
-            //g.AddEdge(0, 1);
-            //g.AddEdge(0, 2);
-            //g.AddEdge(1, 3);
+            // AdjacencyMatrix.Graph g = new AdjacencyMatrix.Graph(5, 4);
+            // g.AddEdge(0, 1);
+            // g.AddEdge(0, 2);
+            // g.AddEdge(1, 3);
 
-            //g.BFS(0);
+            // g.BFS(0);
             #endregion
 
             #region DataStructures
             //DataStructures.Play();
             #endregion
 
-            #region DataStructures
+            #region Any
             new Any().RunTests();
             #endregion
 
@@ -152,10 +150,8 @@ namespace Interview
             new Anagram().RunTests();
             #endregion
 
-            Console.WriteLine("Done");
-            Console.ReadKey();
+            Console.WriteLine("Tests completed!");
+            //Console.ReadKey();
         }
-
-
     }
 }

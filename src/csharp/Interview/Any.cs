@@ -22,19 +22,35 @@ namespace Interview
             return result.ToArray();
         }
 
+        public int[] ArrayDiff2(int[] a, int[] b)
+        {
+            var bUniqueSet = b.ToHashSet();
+            var result = new List<int>();
+            foreach (var item in a)
+            {
+                if (!bUniqueSet.Contains(item))
+                    result.Add(item);
+            }
+
+            return result.ToArray();
+        }
+
         public string CapsWords(string phrase)
         {
             StringBuilder result = new StringBuilder(phrase);
             for (int i = 0; i < phrase.Length - 1; i++)
-            {                
-                if ((phrase[i-1] == ' ' || i ==0 ) && !Char.IsUpper(phrase[i]))
+            {
+                if ((i == 0 || phrase[i - 1] == ' ') && !Char.IsUpper(phrase[i]))
                     result[i] = Char.ToUpper(phrase[i]);
             }
 
             return result.ToString();
 
-
-            String.Join(" ", phrase.Split().Select(i => Char.ToUpper(i[0]) + i.Substring(1)));
+        }
+        public string CapsWords2(string phrase)
+        {
+            return String.Join(" ", 
+                phrase.Split().Select(i => Char.ToUpper(i[0]) + i.Substring(1)));
         }
 
         public int DigitalRoot(long n)
@@ -43,15 +59,16 @@ namespace Interview
             while (result > 9)
             {
                 long sum;
-                for (sum = 0; result > 0; sum += result % 10, result /= 10);
+                for (sum = 0; result > 0; sum += result % 10, result /= 10) ;
 
                 result = sum;
             }
             return (int)result;
         }
 
+        // A sentence using every letter of a given alphabet at least once
         public static bool IsPangram(string str)
-        {            
+        {
             List<char> characters = new List<char>();
             for (char c = 'a'; c <= 'z'; c++)
                 characters.Add(c);
@@ -65,9 +82,10 @@ namespace Interview
 
             return false;
         }
+        
 
         public void RunTests()
-        {            
+        {
             //Array.ForEach(ArrayDiff(new int[] { 1, 2, 2 }, new int[] { 1 }), Console.WriteLine);
             Debug.Assert(Enumerable.SequenceEqual(ArrayDiff(new int[] { 1, 2 }, new int[] { 1 }), new int[] { 2 }));
             Debug.Assert(Enumerable.SequenceEqual(new int[] { 2, 2 }, ArrayDiff(new int[] { 1, 2, 2 }, new int[] { 1 })));
@@ -75,6 +93,12 @@ namespace Interview
             Debug.Assert(Enumerable.SequenceEqual(new int[] { 1, 2, 2 }, ArrayDiff(new int[] { 1, 2, 2 }, new int[] { })));
             Debug.Assert(Enumerable.SequenceEqual(new int[] { }, ArrayDiff(new int[] { }, new int[] { 1, 2 })));
             Debug.Assert(Enumerable.SequenceEqual(new int[] { 3 }, ArrayDiff(new int[] { 1, 2, 3 }, new int[] { 1, 2 })));
+
+            Debug.Assert("A Cat Walked Funny" == CapsWords("a cat walked funny"));
+            Debug.Assert("A Cat Walked Funny" == CapsWords("a cat walked funny"));
+
+            Debug.Assert(IsPangram("abra kadabra") == false);
+            Debug.Assert(IsPangram("The quick brown fox jumps over the lazy dog"));
         }
     }
 }
