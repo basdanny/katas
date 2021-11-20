@@ -2,10 +2,10 @@
 
 namespace Interview
 {
-    /*
-     *  Find amplitude of a tree - Find the highest path distance (highest value in path minus lowest value in path). 
-     *  in O(n).
-     */
+    /// <summary>
+    /// Find amplitude of a tree - Find the highest path distance (highest value in path minus lowest value in path)
+    /// in O(n).
+    /// </summary>    
     public class TreeAmplitude<T>
     {
         public static int GetTreeAmplitude(Node<T> root)

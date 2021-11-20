@@ -1,8 +1,11 @@
-﻿namespace Interview
+﻿using System.Diagnostics;
+using System.Linq;
+
+namespace Interview
 {
-    public static class BubbleSort
+    public class BubbleSort : IRunTests
     {
-        public static void Sort(int[] arr)
+        public int[] Sort(int[] arr)
         {
             int n = arr.Length;
             bool swapped;
@@ -23,6 +26,15 @@
                 if (swapped == false) // if no two elements were swapped by inner loop, then finished
                     break;
             }
+
+            return arr;
+        }
+
+        public void RunTests()
+        {
+            Debug.Assert(Enumerable.SequenceEqual(new int[] { 1 }, Sort(new int[] { 1 })));
+            Debug.Assert(Enumerable.SequenceEqual(new int[] { 1, 2 }, Sort(new int[] { 2, 1 })));
+            Debug.Assert(Enumerable.SequenceEqual(new int[] { 1, 2, 3, 6, 8 }, Sort(new int[] { 8, 3, 2, 6, 1 })));
         }
     }
 }

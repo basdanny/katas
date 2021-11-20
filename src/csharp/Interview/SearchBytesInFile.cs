@@ -3,9 +3,9 @@ using System.Text;
 
 namespace Interview
 {
-    public class SearchBytesInFile
+    public class SearchBytesInFile : IRunTests
     {
-        public static int IndexOf(byte[] input, byte[] searchData)
+        public int IndexOf(byte[] input, byte[] searchData)
         {            
             int searchDataLength = searchData.Length;            
             for (int i = 0; i < input.Length; i++)
@@ -24,11 +24,9 @@ namespace Interview
 
             return -1;
         }
-     
 
-
-        public static void Test()
-        {
+        public void RunTests()
+        {        
             string data = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non lorem ac nibh bibendum finibus. Nullam imperdiet nibh ipsum, ut varius leo tincidunt in. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lacus augue, convallis sit amet vehicula a, commodo at tellus. Vestibulum tempus consequat tincidunt. Phasellus et erat id dui lobortis consectetur id ac magna. Mauris ut neque quis magna dignissim dignissim feugiat eget nibh. Curabitur posuere augue tortor. Cras fermentum tincidunt condimentum. Morbi id leo ante.";
             byte[] dataBytes = Encoding.ASCII.GetBytes(data);
 

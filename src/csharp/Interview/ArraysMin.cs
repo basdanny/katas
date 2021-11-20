@@ -2,9 +2,9 @@
 
 namespace Interview
 {
-    /*
-     *  Given two arrays, return the index of the minimal value present in both arrays, or -1 if non exists
-     */
+    /// <summary>
+    /// Given two arrays, return the index of the minimal value present in both arrays, or -1 if non exists
+    /// </summary>
     class ArraysMin
     {
         public static int GetIndexOfMinimalValueOfSharedElement(int[] arr1, int[] arr2)
@@ -18,7 +18,7 @@ namespace Interview
 
             int i = 0;
             int k = 0;
-            while (i<n && k<m)
+            while (i < n && k < m)
             {
                 if (arr1[i] == arr1[k])
                     return Array.IndexOf(origArr1, arr1[i]); //return arr1[i];

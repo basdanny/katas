@@ -38,18 +38,18 @@ namespace Interview
         public string CapsWords(string phrase)
         {
             StringBuilder result = new StringBuilder(phrase);
-            for (int i = 0; i < phrase.Length - 1; i++)
+            for (int i = 0; i < phrase.Length; i++)
             {
                 if ((i == 0 || phrase[i - 1] == ' ') && !Char.IsUpper(phrase[i]))
                     result[i] = Char.ToUpper(phrase[i]);
             }
 
             return result.ToString();
-
         }
+
         public string CapsWords2(string phrase)
         {
-            return String.Join(" ", 
+            return String.Join(" ",
                 phrase.Split().Select(i => Char.ToUpper(i[0]) + i.Substring(1)));
         }
 
@@ -66,7 +66,9 @@ namespace Interview
             return (int)result;
         }
 
-        // A sentence using every letter of a given alphabet at least once
+        /// <summary>
+        /// A sentence using every letter of a given alphabet at least once
+        /// </summary>                
         public static bool IsPangram(string str)
         {
             List<char> characters = new List<char>();
@@ -82,7 +84,7 @@ namespace Interview
 
             return false;
         }
-        
+
 
         public void RunTests()
         {
@@ -94,8 +96,8 @@ namespace Interview
             Debug.Assert(Enumerable.SequenceEqual(new int[] { }, ArrayDiff(new int[] { }, new int[] { 1, 2 })));
             Debug.Assert(Enumerable.SequenceEqual(new int[] { 3 }, ArrayDiff(new int[] { 1, 2, 3 }, new int[] { 1, 2 })));
 
-            Debug.Assert("A Cat Walked Funny" == CapsWords("a cat walked funny"));
-            Debug.Assert("A Cat Walked Funny" == CapsWords("a cat walked funny"));
+            Debug.Assert("A Cat Walked Funny A" == CapsWords("a cat walked funny a"));
+            Debug.Assert("A Cat Walked Funny A" == CapsWords2("a cat walked funny a"));
 
             Debug.Assert(IsPangram("abra kadabra") == false);
             Debug.Assert(IsPangram("The quick brown fox jumps over the lazy dog"));

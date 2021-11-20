@@ -7,23 +7,19 @@ namespace Interview
         static void Main(string[] args)
         {
 
-            #region BubbleSort
-            //int[] arr = new int[] { 8, 3, 2, 6, 1 };
-            //BubbleSort.Sort(arr);
-            //Console.WriteLine(string.Join(",", arr));
+            #region BubbleSort            
+            new BubbleSort().RunTests();
             #endregion
 
 
 
             #region SearchBytesInFile
-            //SearchBytesInFile.Test();
+            new SearchBytesInFile().RunTests();
             #endregion
 
 
             #region BinarySearch            
-            //BinarySearch.Test(BinarySearch.Chop);
-            //BinarySearch.Test(BinarySearch.cho);
-            //BinarySearch.Test(BinarySearch.ChopRecursive);
+            new BinarySearch().RunTests();            
             #endregion
 
 
@@ -53,12 +49,7 @@ namespace Interview
 
 
             #region AlmostSortedArray
-            /*
-            int[] array = { 10, 20, 60, 40, 50, 30 };
-            Console.WriteLine("input: [{0}]", string.Join(", ", array));
-            AlmostSortedArray.SortByOneSwap(array);
-            Console.WriteLine("output: [{0}]", string.Join(", ", array));
-            */
+            new AlmostSortedArray().RunTests();
             #endregion
 
 
@@ -68,21 +59,7 @@ namespace Interview
 
 
             #region Fibonacci            
-            // Stopwatch sw = new Stopwatch();
-            // sw.Start();
-            // BigInteger result = Fibonacci.FibonacciElementRecursive(36);
-            // sw.Stop();
-            // Console.WriteLine("Fibonacci Element Recursive:\t" + result + "\t Elapsed time in milli: " + sw.ElapsedMilliseconds);
-
-            // sw.Restart();
-            // result = Fibonacci.FibonacciElementRecursive(36, null);
-            // sw.Stop();
-            // Console.WriteLine("Recursive + Memoization:\t" + result + "\t Elapsed time in milli: " + sw.ElapsedMilliseconds);
-
-            // sw.Restart();
-            // result = Fibonacci.FibonacciElementIterative(36);
-            // sw.Stop();
-            // Console.WriteLine("Fibonacci Element Iterative:\t" + result + "\t Elapsed time in milli: " + sw.ElapsedMilliseconds);
+            new Fibonacci().RunTests();
             #endregion
 
 
@@ -148,7 +125,9 @@ namespace Interview
             new Anagram().RunTests();
             #endregion
 
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("Tests completed!");
+            Console.ForegroundColor = ConsoleColor.White;
             //Console.ReadKey();
         }
     }

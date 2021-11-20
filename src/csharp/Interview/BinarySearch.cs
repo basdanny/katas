@@ -3,13 +3,13 @@ using System.Diagnostics;
 
 namespace Interview
 {
-    public class BinarySearch
+    public class BinarySearch : IRunTests
     {
         /// <summary>
         /// A binary chop method that takes an integer search target and a sorted array of integers. 
         /// It should return the integer index of the target in the array, or -1 if the target is not in the array.
         /// </summary>
-        public static int Chop(int number, int[] array)
+        public int Chop(int number, int[] array)
         {
             if (array.Length <= 0)
                 return -1;
@@ -26,12 +26,12 @@ namespace Interview
                     startIndex = splitIndex + 1;
                 else if (array[splitIndex] == number)
                     return splitIndex;
-            }            
+            }
 
             return -1;
         }
 
-        public static int Chop2(int number, int[] array)
+        public int Chop2(int number, int[] array)
         {
             if (array.Length <= 0)
                 return -1;
@@ -54,7 +54,7 @@ namespace Interview
                 return -1;
         }
 
-        public static int ChopRecursive(int number, int[] array)
+        public int ChopRecursive(int number, int[] array)
         {
             if (array.Length <= 0)
                 return -1;
@@ -64,7 +64,7 @@ namespace Interview
             return ChopRecursive(number, array, startIndex, endIndex);
         }
 
-        private static int ChopRecursive(int number, int[] array, int startIndex, int endIndex)
+        private int ChopRecursive(int number, int[] array, int startIndex, int endIndex)
         {
             if (startIndex <= endIndex)
             {
@@ -74,16 +74,16 @@ namespace Interview
                 if (array[splitIndex] == number)
                     return splitIndex;
                 else if (array[splitIndex] >= number)
-                    return ChopRecursive(number, array, startIndex, splitIndex-1);
+                    return ChopRecursive(number, array, startIndex, splitIndex - 1);
                 else
-                    return ChopRecursive(number, array, splitIndex+1, endIndex);
+                    return ChopRecursive(number, array, splitIndex + 1, endIndex);
             }
 
             return -1;
         }
 
 
-        public static void Test(Func<int, int[], int> chop)
+        private void Test(Func<int, int[], int> chop)
         {
             Debug.Assert(-1 == chop(3, new int[] { }));
             Debug.Assert(-1 == chop(3, new int[] { 1 }));
@@ -106,6 +106,13 @@ namespace Interview
             Debug.Assert(-1 == chop(4, new int[] { 1, 3, 5, 7 }));
             Debug.Assert(-1 == chop(6, new int[] { 1, 3, 5, 7 }));
             Debug.Assert(-1 == chop(8, new int[] { 1, 3, 5, 7 }));
+        }
+
+        public void RunTests()
+        {
+            Test(this.Chop);
+            Test(this.Chop2);
+            Test(this.ChopRecursive);
         }
     }
 }
