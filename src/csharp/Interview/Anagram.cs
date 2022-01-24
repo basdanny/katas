@@ -19,12 +19,10 @@ namespace Interview
 
         public bool IsAnagram2(string input1, string input2)
         {
-            char[] orderedChars1 = input1.ToArray();
-            Array.Sort(orderedChars1);
-            char[] orderedChars2 = input2.ToArray();
-            Array.Sort(orderedChars2);
+            var orderedChars1 = input1.ToArray().OrderBy(c => c);
+            var orderedChars2 = input2.ToArray().OrderBy(c => c);            
             
-            return new string(orderedChars1) == new string(orderedChars2);
+            return orderedChars1.SequenceEqual(orderedChars2);
         }
 
 

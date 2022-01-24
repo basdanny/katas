@@ -58,12 +58,11 @@ namespace Interview
             concurrentDic[2] = "b";
             Console.WriteLine($"concurrentDic: {string.Join(",", concurrentDic)}");
 
-
-            var set = new HashSet<string>() { "a", "b", "c", "d" };       
+            var set = new HashSet<string>() { "a", "b", "c", "d" };
             Console.WriteLine($"hashSet: {string.Join(",", set)}");
 
-            Console.WriteLine(String.Format("{0:0.000000}", ((decimal)1/5)));
-                      
+            Console.WriteLine(String.Format("{0:0.000000}", ((decimal)1 / 5)));
+
         }
 
 

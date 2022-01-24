@@ -12,7 +12,6 @@ namespace Interview
             #endregion
 
 
-
             #region SearchBytesInFile
             new SearchBytesInFile().RunTests();
             #endregion
@@ -82,12 +81,14 @@ namespace Interview
             // Console.WriteLine("9119 digits square roots are: " + SquareRoots.GetDigitsSquareRoots2(9119));
             #endregion
 
+            
             #region MatrixLargestSquare
             /*MatrixLargestSquare m = new MatrixLargestSquare();
 
             Console.WriteLine("largest square of 1's is: "+m.GetLargestSquare());
             Console.WriteLine("largest square recursive of 1's is: " + m.GetLargestSquareRecursive());*/
             #endregion
+
 
             #region CommonDivisor
             // Console.WriteLine("GCD " + CommonDivisor.GetGreatestCommonDivisor(4, 8));
@@ -100,9 +101,11 @@ namespace Interview
             // Console.WriteLine("LCM " + CommonDivisor.GetLeastCommonMultiple2(3, 4));
             #endregion
 
+
             #region Sets
             //Intersections.Do();
             #endregion
+
 
             #region AdjacencyMatrix                        
             // AdjacencyMatrix.Graph g = new AdjacencyMatrix.Graph(5, 4);
@@ -113,17 +116,37 @@ namespace Interview
             // g.BFS(0);
             #endregion
 
+
             #region DataStructures
             //DataStructures.Play();
             #endregion
+
 
             #region Any
             new Any().RunTests();
             #endregion
 
+
             #region DataStructures
             new Anagram().RunTests();
             #endregion
+
+            #region ListNodeDeleteElement
+            new ListNodeDeleteElement().RunTests();
+            #endregion
+
+            #region MatrixIslands
+            new MatrixIslands().RunTests();
+            #endregion
+
+            #region ShuffleCards
+            //new ShuffleCards().RunTests();
+            #endregion
+
+            #region ShuffleCards
+            new MeetingRooms().RunTests();
+            #endregion
+
 
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("Tests completed!");
