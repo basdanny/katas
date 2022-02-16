@@ -147,6 +147,9 @@ namespace Interview
             new MeetingRooms().RunTests();
             #endregion
 
+            #region LRUCache
+            new LRUCache().RunTests();
+            #endregion
 
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("Tests completed!");
