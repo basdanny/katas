@@ -11,7 +11,8 @@
   "dependencies": {
     "axios": "^0.26.0",
     "fastq": "^1.13.0",
-    "node-fetch": "^3.2.1"
+    "node-fetch": "^3.2.1",
+    "node-worker-threads-pool": "^1.5.1"
   },
   "description": ""
 }
