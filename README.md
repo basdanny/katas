@@ -1,4 +1,4 @@
-### Code interview (questions and) solutions
+### Code katas / interview questions and solutions
 
 For more comprehensive resources:
 
