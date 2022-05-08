@@ -4,7 +4,7 @@ using System.Collections.Generic;
 /*
  * Find common ancestor of two supplied nodes in a binary tree
  */
-namespace Interview
+namespace Katas
 {
     public class Node<T>
     {

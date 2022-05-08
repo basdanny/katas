@@ -1,4 +1,4 @@
-﻿namespace Interview
+﻿namespace Katas
 {
     interface IRunTests
     {

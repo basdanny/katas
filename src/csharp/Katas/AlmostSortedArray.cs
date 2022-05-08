@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics;
 using System.Linq;
 
-namespace Interview
+namespace Katas
 {
 
     /// <summary>
@@ -21,7 +21,7 @@ namespace Interview
 
                     //do the swap
                     int temp = arr[i];
-                    int leftIndexOfSwap = (j == i - 1) ? j : j + 1; //check for adjucent swap
+                    int leftIndexOfSwap = j == i - 1 ? j : j + 1; //check for adjucent swap
                     arr[i] = arr[leftIndexOfSwap];
                     arr[leftIndexOfSwap] = temp;
 
@@ -34,8 +34,8 @@ namespace Interview
 
         public void RunTests()
         {
-            Debug.Assert(Enumerable.SequenceEqual(new int[] { 1, 2, 4, 5 }, SortByOneSwap(new int[] { 1, 5, 4, 2 })));
-            Debug.Assert(Enumerable.SequenceEqual(new int[] { 1, 2 }, SortByOneSwap(new int[] { 2, 1 })));
+            Debug.Assert((new int[] { 1, 2, 4, 5 }).SequenceEqual(SortByOneSwap(new int[] { 1, 5, 4, 2 })));
+            Debug.Assert((new int[] { 1, 2 }).SequenceEqual(SortByOneSwap(new int[] { 2, 1 })));
         }
     }
 }

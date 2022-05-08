@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 
-namespace Interview
+namespace Katas
 {
     public class BinarySearch : IRunTests
     {

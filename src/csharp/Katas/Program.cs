@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Interview
+namespace Katas
 {
     class Program
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace Interview
+namespace Katas
 {
     public class ShuffleCards : IRunTests
     {

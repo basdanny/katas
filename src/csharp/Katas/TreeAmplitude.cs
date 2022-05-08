@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Interview
+namespace Katas
 {
     /// <summary>
     /// Find amplitude of a tree - Find the highest path distance (highest value in path minus lowest value in path)

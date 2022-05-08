@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 
 
-namespace Interview
+namespace Katas
 {
     public class LRUCache : IRunTests
     {

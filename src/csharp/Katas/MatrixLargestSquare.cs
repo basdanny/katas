@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Interview
+namespace Katas
 {
     /*
      *  Largest Square of 1's in A Matrix

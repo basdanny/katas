@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics;
 
-namespace Interview
+namespace Katas
 {
     // In a matrix of 1 (land) and 0 (water), count the number of islands - adjacent `1`s   
     class MatrixIslands : IRunTests

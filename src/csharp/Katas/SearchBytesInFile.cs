@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics;
 using System.Text;
 
-namespace Interview
+namespace Katas
 {
     public class SearchBytesInFile : IRunTests
     {

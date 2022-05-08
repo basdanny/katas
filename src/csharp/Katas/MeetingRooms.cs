@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Interview
+namespace Katas
 {
     // Given an array of meeting times intervals [[10, 20], [5, 12]...] find the minimum number of conference rooms required.
     class MeetingRooms : IRunTests

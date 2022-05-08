@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Numerics;
 
-namespace Interview
+namespace Katas
 {
     class Fibonacci : IRunTests
     {

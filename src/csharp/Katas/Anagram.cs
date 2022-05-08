@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.Linq;
 
 
-namespace Interview
+namespace Katas
 {
     public class Anagram : IRunTests
     {
@@ -13,15 +13,15 @@ namespace Interview
         /// </summary>        
         public bool IsAnagram(string input1, string input2)
         {
-            return (input1.Length == input2.Length &&
-                string.Concat(input1.OrderBy(c => c)) == string.Concat(input2.OrderBy(c => c)));
+            return input1.Length == input2.Length &&
+                string.Concat(input1.OrderBy(c => c)) == string.Concat(input2.OrderBy(c => c));
         }
 
         public bool IsAnagram2(string input1, string input2)
         {
             var orderedChars1 = input1.ToArray().OrderBy(c => c);
-            var orderedChars2 = input2.ToArray().OrderBy(c => c);            
-            
+            var orderedChars2 = input2.ToArray().OrderBy(c => c);
+
             return orderedChars1.SequenceEqual(orderedChars2);
         }
 

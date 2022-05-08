@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Interview
+namespace Katas
 {
     // https://www.geeksforgeeks.org/implementation-of-bfs-using-adjacency-matrix/
     public class AdjacencyMatrix
@@ -24,7 +24,7 @@ namespace Interview
                 this.v = v;
                 this.e = e;
 
-                this.adj = new int[v, v];
+                adj = new int[v, v];
                 for (int row = 0; row < v; row++)
                     for (int column = 0; column < v; column++)
                         adj[row, column] = 0;
@@ -40,7 +40,7 @@ namespace Interview
             // Function to perform BFS on the graph
             public void BFS(int start)
             {
-                var visited = new bool[this.v];
+                var visited = new bool[v];
 
                 var nodes = new Queue<int>();
                 nodes.Enqueue(start);
@@ -51,9 +51,9 @@ namespace Interview
                     var current = nodes.Dequeue();
                     Console.WriteLine(current + " ");
 
-                    for (int i = 0; i < this.v; i++)
+                    for (int i = 0; i < v; i++)
                     {
-                        if(adj[current, i] == 1 && !visited[i])
+                        if (adj[current, i] == 1 && !visited[i])
                         {
                             nodes.Enqueue(i);
                             visited[i] = true;

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Interview
+namespace Katas
 {
     public class Intersections
 	{

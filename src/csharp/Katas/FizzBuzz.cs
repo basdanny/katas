@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Interview
+namespace Katas
 {
     public class FizzBuzz
     {
