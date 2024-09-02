@@ -127,7 +127,7 @@ namespace Katas
             #endregion
 
 
-            #region DataStructures
+            #region Anagram
             new Anagram().RunTests();
             #endregion
 
@@ -143,12 +143,16 @@ namespace Katas
             //new ShuffleCards().RunTests();
             #endregion
 
-            #region ShuffleCards
+            #region MeetingRooms
             new MeetingRooms().RunTests();
             #endregion
 
             #region LRUCache
             new LRUCache().RunTests();
+            #endregion
+
+            #region Strings
+            new LongestSubstring().RunTests();
             #endregion
 
             Console.ForegroundColor = ConsoleColor.Green;

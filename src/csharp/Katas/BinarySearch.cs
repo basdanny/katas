@@ -9,7 +9,7 @@ namespace Katas
         /// A binary chop method that takes an integer search target and a sorted array of integers. 
         /// It should return the integer index of the target in the array, or -1 if the target is not in the array.
         /// </summary>
-        public int Chop(int number, int[] array)
+        public int BinarySearch1(int number, int[] array)
         {
             if (array.Length <= 0)
                 return -1;
@@ -31,7 +31,7 @@ namespace Katas
             return -1;
         }
 
-        public int Chop2(int number, int[] array)
+        public int BinarySearch2(int number, int[] array)
         {
             if (array.Length <= 0)
                 return -1;
@@ -54,17 +54,17 @@ namespace Katas
                 return -1;
         }
 
-        public int ChopRecursive(int number, int[] array)
+        public int BinarySearchRecursive(int number, int[] array)
         {
             if (array.Length <= 0)
                 return -1;
 
             int startIndex = 0;
             int endIndex = array.Length - 1;
-            return ChopRecursive(number, array, startIndex, endIndex);
+            return BinarySearchRecursive(number, array, startIndex, endIndex);
         }
 
-        private int ChopRecursive(int number, int[] array, int startIndex, int endIndex)
+        private int BinarySearchRecursive(int number, int[] array, int startIndex, int endIndex)
         {
             if (startIndex <= endIndex)
             {
@@ -74,45 +74,45 @@ namespace Katas
                 if (array[splitIndex] == number)
                     return splitIndex;
                 else if (array[splitIndex] >= number)
-                    return ChopRecursive(number, array, startIndex, splitIndex - 1);
+                    return BinarySearchRecursive(number, array, startIndex, splitIndex - 1);
                 else
-                    return ChopRecursive(number, array, splitIndex + 1, endIndex);
+                    return BinarySearchRecursive(number, array, splitIndex + 1, endIndex);
             }
 
             return -1;
         }
 
 
-        private void Test(Func<int, int[], int> chop)
+        private void Test(Func<int, int[], int> binarySearch)
         {
-            Debug.Assert(-1 == chop(3, new int[] { }));
-            Debug.Assert(-1 == chop(3, new int[] { 1 }));
-            Debug.Assert(0 == chop(1, new int[] { 1 }));
+            Debug.Assert(-1 == binarySearch(3, new int[] { }));
+            Debug.Assert(-1 == binarySearch(3, new int[] { 1 }));
+            Debug.Assert(0 == binarySearch(1, new int[] { 1 }));
 
-            Debug.Assert(0 == chop(1, new int[] { 1, 3, 5 }));
-            Debug.Assert(1 == chop(3, new int[] { 1, 3, 5 }));
-            Debug.Assert(2 == chop(5, new int[] { 1, 3, 5 }));
-            Debug.Assert(-1 == chop(0, new int[] { 1, 3, 5 }));
-            Debug.Assert(-1 == chop(2, new int[] { 1, 3, 5 }));
-            Debug.Assert(-1 == chop(4, new int[] { 1, 3, 5 }));
-            Debug.Assert(-1 == chop(6, new int[] { 1, 3, 5 }));
+            Debug.Assert(0 == binarySearch(1, new int[] { 1, 3, 5 }));
+            Debug.Assert(1 == binarySearch(3, new int[] { 1, 3, 5 }));
+            Debug.Assert(2 == binarySearch(5, new int[] { 1, 3, 5 }));
+            Debug.Assert(-1 == binarySearch(0, new int[] { 1, 3, 5 }));
+            Debug.Assert(-1 == binarySearch(2, new int[] { 1, 3, 5 }));
+            Debug.Assert(-1 == binarySearch(4, new int[] { 1, 3, 5 }));
+            Debug.Assert(-1 == binarySearch(6, new int[] { 1, 3, 5 }));
 
-            Debug.Assert(0 == chop(1, new int[] { 1, 3, 5, 7 }));
-            Debug.Assert(1 == chop(3, new int[] { 1, 3, 5, 7 }));
-            Debug.Assert(2 == chop(5, new int[] { 1, 3, 5, 7 }));
-            Debug.Assert(3 == chop(7, new int[] { 1, 3, 5, 7 }));
-            Debug.Assert(-1 == chop(0, new int[] { 1, 3, 5, 7 }));
-            Debug.Assert(-1 == chop(2, new int[] { 1, 3, 5, 7 }));
-            Debug.Assert(-1 == chop(4, new int[] { 1, 3, 5, 7 }));
-            Debug.Assert(-1 == chop(6, new int[] { 1, 3, 5, 7 }));
-            Debug.Assert(-1 == chop(8, new int[] { 1, 3, 5, 7 }));
+            Debug.Assert(0 == binarySearch(1, new int[] { 1, 3, 5, 7 }));
+            Debug.Assert(1 == binarySearch(3, new int[] { 1, 3, 5, 7 }));
+            Debug.Assert(2 == binarySearch(5, new int[] { 1, 3, 5, 7 }));
+            Debug.Assert(3 == binarySearch(7, new int[] { 1, 3, 5, 7 }));
+            Debug.Assert(-1 == binarySearch(0, new int[] { 1, 3, 5, 7 }));
+            Debug.Assert(-1 == binarySearch(2, new int[] { 1, 3, 5, 7 }));
+            Debug.Assert(-1 == binarySearch(4, new int[] { 1, 3, 5, 7 }));
+            Debug.Assert(-1 == binarySearch(6, new int[] { 1, 3, 5, 7 }));
+            Debug.Assert(-1 == binarySearch(8, new int[] { 1, 3, 5, 7 }));
         }
 
         public void RunTests()
         {
-            Test(this.Chop);
-            Test(this.Chop2);
-            Test(this.ChopRecursive);
+            Test(this.BinarySearch1);
+            Test(this.BinarySearch2);
+            Test(this.BinarySearchRecursive);
         }
     }
 }

@@ -20,12 +20,12 @@ namespace Katas
 
         public int MinMeetingRooms(Interval[] intervals)
         {
-            int n = intervals.Count();
-            if (intervals == null || n == 0)
+            if (intervals == null || intervals.Length == 0)
                 return 0;
+            int n = intervals.Length;
 
             var orderedStarts = intervals.Select(i => i.start).OrderBy(s => s).ToArray();
-            var orderedEnds = intervals.Select(i => i.end).OrderBy(s => s).ToArray();
+            var orderedEnds = intervals.Select(i => i.end).OrderBy(e => e).ToArray();
 
             int i = 0;
             int j = 0;
@@ -36,19 +36,20 @@ namespace Katas
                 if (orderedStarts[i] < orderedEnds[j])
                 {
                     rooms++;
-                    i++;
+                    i++;                    
                 }
                 else
                 {
                     rooms--;
                     j++;
-                }
-                
+                }                
+
                 totalRooms = Math.Max(totalRooms, rooms);
             }
             
             return totalRooms;
         }
+
         public void RunTests()
         {
             Interval[] intervals = new Interval[] { new Interval(0, 30), new Interval(5, 10), new Interval(15, 20) };
@@ -60,6 +61,11 @@ namespace Katas
             var result2 = MinMeetingRooms(intervals2);
             //Console.WriteLine("Min rooms: " + result2);
             Debug.Assert(result2 == 3);
+
+            Interval[] intervals3 = new Interval[] { new Interval(1, 10), new Interval(2, 5), new Interval(11, 12), new Interval(13, 14), new Interval(4, 6) };
+            var result3 = MinMeetingRooms(intervals3);
+            //Console.WriteLine("Min rooms: " + result3);
+            Debug.Assert(result3 == 3);            
         }
     }
 }

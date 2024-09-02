@@ -9,6 +9,9 @@ namespace Katas
     public class Any : IRunTests
     {
 
+        /// <summary>
+        /// subtracts one list from another and returns the result.
+        /// </summary>        
         public int[] ArrayDiff(int[] a, int[] b)
         {
             var uniqueDiffSet = new HashSet<int>(a.Except(b));
@@ -85,6 +88,12 @@ namespace Katas
             return false;
         }
 
+        public static string StripComments(string text, string[] commentSymbols)
+        {
+            return string.Join("\n",
+                text.Split("\n").Select(line => line.Split(commentSymbols, StringSplitOptions.None)[0].TrimEnd()));
+        }
+
 
         public void RunTests()
         {
@@ -101,6 +110,8 @@ namespace Katas
 
             Debug.Assert(IsPangram("abra kadabra") == false);
             Debug.Assert(IsPangram("The quick brown fox jumps over the lazy dog"));
+
+            Debug.Assert("a\nc\nd" == StripComments("a #b\nc\nd $e f g", new string[] { "#", "$" }));
         }
     }
 }

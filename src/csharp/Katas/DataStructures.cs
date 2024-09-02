@@ -50,10 +50,9 @@ namespace Katas
             var dic = new Dictionary<int, string>() { { 1, "a" }, { 2, "b" } };
             Console.WriteLine($"dic: {string.Join(",", dic)}");
 
-
-            int numProcs = Environment.ProcessorCount;
-            int concurrencyLevel = numProcs * 2;
-            var concurrentDic = new ConcurrentDictionary<int, string>(numProcs, concurrencyLevel);
+            
+            int concurrencyLevel = Environment.ProcessorCount * 2;
+            var concurrentDic = new ConcurrentDictionary<int, string>(concurrencyLevel, 2);
             concurrentDic[1] = "a";
             concurrentDic[2] = "b";
             Console.WriteLine($"concurrentDic: {string.Join(",", concurrentDic)}");
@@ -62,7 +61,6 @@ namespace Katas
             Console.WriteLine($"hashSet: {string.Join(",", set)}");
 
             Console.WriteLine(String.Format("{0:0.000000}", ((decimal)1 / 5)));
-
         }
 
 

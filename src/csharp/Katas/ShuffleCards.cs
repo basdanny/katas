@@ -12,7 +12,7 @@ namespace Katas
             Random random = new Random();
             for (int i = 0; i < cardsArray.Count(); i++)
             {
-                int switchIndex = random.Next(1, 52);
+                int switchIndex = random.Next(0, 52);
 
                 var temp = cardsArray[i];
                 cardsArray[i] = cardsArray[switchIndex];

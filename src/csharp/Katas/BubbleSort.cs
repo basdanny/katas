@@ -5,6 +5,7 @@ namespace Katas
 {
     public class BubbleSort : IRunTests
     {
+        
         public int[] Sort(int[] arr)
         {
             int n = arr.Length;
