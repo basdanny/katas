@@ -151,14 +151,18 @@ namespace Katas
             new LRUCache().RunTests();
             #endregion
 
+
             #region Strings
             new LongestSubstring().RunTests();
+
+            #region MinDiff3Moves
+            new MinDiff3Moves().RunTests();
             #endregion
 
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("Tests completed!");
             Console.ForegroundColor = ConsoleColor.White;
-            //Console.ReadKey();
+            //Console.ReadKey();            
         }
     }
 }
