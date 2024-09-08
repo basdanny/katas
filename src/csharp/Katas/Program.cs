@@ -161,7 +161,9 @@ namespace Katas
             new MinDiff3Moves().RunTests();
             #endregion
 
-
+            #region TimeToType a string
+            new TimeToType().RunTests();
+            #endregion
 
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("Tests completed!");
