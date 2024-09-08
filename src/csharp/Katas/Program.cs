@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 
 namespace Katas
 {
@@ -6,6 +7,7 @@ namespace Katas
     {
         static void Main(string[] args)
         {
+            SetAssertConsoleColor();
 
             #region BubbleSort            
             new BubbleSort().RunTests();
@@ -18,7 +20,7 @@ namespace Katas
 
 
             #region BinarySearch            
-            new BinarySearch().RunTests();            
+            new BinarySearch().RunTests();
             #endregion
 
 
@@ -81,7 +83,7 @@ namespace Katas
             // Console.WriteLine("9119 digits square roots are: " + SquareRoots.GetDigitsSquareRoots2(9119));
             #endregion
 
-            
+
             #region MatrixLargestSquare
             /*MatrixLargestSquare m = new MatrixLargestSquare();
 
@@ -151,18 +153,27 @@ namespace Katas
             new LRUCache().RunTests();
             #endregion
 
-
             #region Strings
             new LongestSubstring().RunTests();
+            #endregion
 
             #region MinDiff3Moves
             new MinDiff3Moves().RunTests();
             #endregion
 
+
+
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("Tests completed!");
             Console.ForegroundColor = ConsoleColor.White;
-            //Console.ReadKey();            
+            //Console.ReadKey();
+        }
+
+        private static void SetAssertConsoleColor()
+        {
+            // Add the custom trace listener
+            Trace.Listeners.Clear();
+            Trace.Listeners.Add(new CustomConsoleTraceListener());
         }
     }
 }
