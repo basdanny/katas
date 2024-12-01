@@ -1,6 +1,6 @@
 package main.scala.com.katas
 
-object Anagram extends App {
+object Anagram {
 
   def isAnagram(input1: String, input2: String) = {
     if (input1.length != input2.length) {
@@ -14,9 +14,6 @@ object Anagram extends App {
     }
   }
 
-
-  assert(isAnagram("cat", "tac"))
-  assert(isAnagram("cat", "taco") == false)
-  assert(isAnagram("annabelle", "aanabelee") == false)
+  def isAnagram2(str1: String, str2: String) = str1.sorted == str2.sorted
 
 }

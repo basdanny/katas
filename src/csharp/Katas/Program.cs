@@ -165,6 +165,14 @@ namespace Katas
             new TimeToType().RunTests();
             #endregion
 
+            #region Special Factorial
+            new Factorial().RunTests();
+            #endregion
+ 
+            #region ClockwiseSpiral
+            new ClockwiseSpiral().RunTests();
+            #endregion
+
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("Tests completed!");
             Console.ForegroundColor = ConsoleColor.White;

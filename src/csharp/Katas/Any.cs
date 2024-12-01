@@ -94,6 +94,31 @@ namespace Katas
                 text.Split("\n").Select(line => line.Split(commentSymbols, StringSplitOptions.None)[0].TrimEnd()));
         }
 
+        public static string ToBase64(string s)
+        {
+            var plainTextBytes = System.Text.Encoding.UTF8.GetBytes(s);
+            return System.Convert.ToBase64String(plainTextBytes);
+        }
+
+        public static string FromBase64(string s)
+        {
+            var base64EncodedBytes = System.Convert.FromBase64String(s);
+            return System.Text.Encoding.UTF8.GetString(base64EncodedBytes);
+        }
+
+        public static int SumOfMultiplesOf3and5(int value)
+        {
+            if (value <= 2) return 0;
+
+            var result = 0;
+            for (int i = 1; i < value; i++)
+            {
+                if (i % 3 == 0 || i % 5 == 0)
+                    result += i;
+            }
+            return result;
+        }
+
 
         public void RunTests()
         {
@@ -112,6 +137,10 @@ namespace Katas
             Debug.Assert(IsPangram("The quick brown fox jumps over the lazy dog"));
 
             Debug.Assert("a\nc\nd" == StripComments("a #b\nc\nd $e f g", new string[] { "#", "$" }));
+
+
+            Debug.Assert(ToBase64("this is a string!!") == "dGhpcyBpcyBhIHN0cmluZyEh");
+            Debug.Assert(FromBase64("dGhpcyBpcyBhIHN0cmluZyEh") == "this is a string!!");
         }
     }
 }
